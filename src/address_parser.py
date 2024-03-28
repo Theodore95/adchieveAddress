@@ -1,4 +1,3 @@
-FILEPATH = "src/resources/addresses.txt"
 MAX_SPLITS = 1
 
 def parse_file(filepath: str) -> list[str]:
@@ -17,17 +16,7 @@ def parse_file(filepath: str) -> list[str]:
 
   return _clean(_trim(entries))
 
-def _trim(lines: list[str]) -> list[str]:
-  """
-  Iterates over a list of strings and removes leading/trailing whitespace
-  """
-  return list(map(lambda entry: str.strip(entry), lines))
-  # return [entry.strip() for entry in lines]
-
-def _clean(lines: list[str]) -> list[str]:
-  return list(filter(lambda entry: bool(entry), lines))
-
-def split_string(input: str, split_token: str) -> tuple[str, str]:
+def split_address(input: str, split_token: str) -> tuple[str, str]:
   """
   Splits an input string in to two strings at the first occurrence of split_token.
 
@@ -42,3 +31,9 @@ def split_string(input: str, split_token: str) -> tuple[str, str]:
   two_parts = input.split(split_token, MAX_SPLITS)
   if len(two_parts) == 2: return two_parts[0], two_parts[1]
   else: return two_parts[0], ""
+
+def _trim(lines: list[str]) -> list[str]:
+  return list(map(lambda entry: str.strip(entry), lines))
+
+def _clean(lines: list[str]) -> list[str]:
+  return list(filter(lambda entry: bool(entry), lines))

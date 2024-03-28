@@ -1,0 +1,18 @@
+# The latitude and longitude information to which distance is calculated.
+# In this case the geolocation data for Adchieve HQ is entered
+epicenter:
+  latitude: 51.6882
+  longitude: 5.298532
+
+# The URL address and access key of external geocoding API providor
+api_endpoint: "api.positionstack.com"
+access_key: "9eb61b6aa98a57d4201f19b0253c92aa"
+
+# The http path for the "forward" operation of geocoding.
+forward_geocode_path: "/v1/forward?"
+
+# The path to the text file containing addresses
+address_file: "src/resources/addresses.txt"
+
+# The path to the csv file that locations will be written to
+csv_file: "src/resources/output.csv"
