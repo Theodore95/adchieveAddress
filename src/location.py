@@ -2,7 +2,7 @@
 import yaml
 from geopy.distance import geodesic
 
-with open("src/resources/configuration.yaml") as config_file:
+with open("resources/configuration.yaml") as config_file:
   config_data = yaml.safe_load(config_file)
 
 ADCHIEVE_LATITUDE = config_data["epicenter"]["latitude"]
